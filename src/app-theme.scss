@@ -1,0 +1,24 @@
+// DO NOT IMPORT THIS FILE IN OTHER SASS FILES OTHER THAT style.scss!!!
+
+// WORKS FROM ANGULAR v12+
+
+
+@use '~@angular/material' as mat;
+@import '/src/palette';
+
+
+$primary: mat.define-palette($primary, default, lighter, darker);
+$accent: mat.define-palette($accent, default, lighter, darker);
+
+$theme: (
+  primary: $primary,
+  accent: $accent,
+  warn: $accent,  // to define
+  is-dark: false,
+  foreground: $mat-light-theme-foreground,
+  background: $mat-light-theme-background,
+);
+
+@include mat.core($typhography);
+
+@include mat.all-component-themes($theme);

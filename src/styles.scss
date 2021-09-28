@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '/src/mixins';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+}
+
+
+// generate color classes from palette
+
+.text-primary {
+  @include primaryTextHues;
+}
+
+.text-accent {
+  @include accentTextBgHues;
+}
+
+// generate background classes from palette
+
+.primary {
+  @include primaryBgHues;
+}
+
+.accent {
+  @include accentBgHues;
+}
+
+
+.txt {
+  @include generateFrom($primary, 500, 'color');
+}

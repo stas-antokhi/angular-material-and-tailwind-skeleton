@@ -1,0 +1,49 @@
+@use "sass:map";
+@import '/src/palette';
+
+@mixin primaryBgHues {
+  @each $key, $hue in $primary {
+    @if $key != 'contrast' {
+      &-#{$key} {
+        background-color: $hue;
+      }
+    }
+  }
+};
+
+@mixin primaryTextHues {
+  @each $key, $hue in $primary {
+    @if $key != 'contrast' {
+      &-#{$key} {
+        color: $hue;
+      }
+    }
+  }
+};
+
+@mixin accentBgHues {
+  @each $key, $hue in $accent {
+    @if $key != 'contrast' {
+      &-#{$key} {
+        color: $hue;
+      }
+    }
+  }
+};
+
+@mixin accentTextBgHues {
+  @each $key, $hue in $accent {
+    @if $key != 'contrast' {
+      &-#{$key} {
+        color: $hue;
+      }
+    }
+  }
+};
+
+
+@mixin generateFrom($colorMap, $hue: 'default', $property) {
+  &-#{$hue} {
+    $property: map-get($colorMap, $hue);
+  }
+}

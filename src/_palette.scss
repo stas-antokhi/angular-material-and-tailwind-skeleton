@@ -1,0 +1,175 @@
+@use 'sass:map';
+@use '~@angular/material' as mat;
+
+@import 'https://fonts.googleapis.com/css?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$dark-text: rgba(black, 0.87);
+$light-text: rgba(white, 0.87);
+$dark: rgba(black, 0.12);
+
+$light-foreground:  hsl(0, 0%, 98%);
+$light-background:  hsl(0, 0%, 98%);
+$light-bg-darker-5:   darken($light-background, 5%);
+$light-bg-darker-10:  darken($light-background, 10%);
+$light-bg-darker-20:  darken($light-background, 20%);
+$light-bg-darker-30:  darken($light-background, 30%);
+$light-bg-lighter-5:  lighten($light-background, 5%);
+$dark-bg:           hsl(0, 0%, 27%);
+
+
+body {
+  --background: #fafafa;
+}
+
+
+$typhography: (
+  display-4: mat.define-typography-level(112px, 112px, 300, 'Roboto', -0.0134em),
+  display-3: mat.define-typography-level(56px, 56px, 400, 'Roboto', -0.0089em),
+  display-2: mat.define-typography-level(45px, 48px, 400, 'Roboto', 0.0000em),
+  display-1: mat.define-typography-level(34px, 40px, 400, 'Roboto', 0.0074em),
+  headline: mat.define-typography-level(24px, 32px, 400, 'Montserrat', 0.0000em),
+  title: mat.define-typography-level(20px, 32px, 500, 'Montserrat', 0.0075em),
+  subheading-2: mat.define-typography-level(16px, 28px, 400, 'Montserrat', 0.0094em),
+  subheading-1: mat.define-typography-level(15px, 24px, 500, 'Montserrat', 0.0067em),
+  body-2: mat.define-typography-level(14px, 24px, 500, 'Roboto', 0.0179em),
+  body-1: mat.define-typography-level(14px, 20px, 400, 'Roboto', 0.0179em),
+  button: mat.define-typography-level(14px, 14px, 500, 'Roboto', 0.0893em),
+  caption: mat.define-typography-level(12px, 20px, 400, 'Roboto', 0.0333em),
+  input: mat.define-typography-level(inherit, 1.125, 400, 'Roboto', 1.5px)
+);
+
+
+$primary: (
+  50: #ccf5ff,
+  100: #b3efff,
+  200: #9aeafe,
+  300: #67e0fe,
+  400: #34d6fe,
+  500: #01cbfe,
+  600: #01a3cb,
+  700: #017a98,
+  800: #01667f,
+  900: #015165,
+  default: #017a98,
+  lighter: #01a3cb,
+  darker: #01667f,
+
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $dark-text,
+    400: $dark-text,
+    500: $light-text,
+    600: $light-text,
+    700: $light-text,
+    800: $light-text,
+    900: $light-text,
+    default: $light-text,
+    lighter: $dark-text,
+    darker: $light-text
+  )
+);
+
+
+$accent: (
+  50: hsl(203, 45%, 95%),
+  100: hsl(203, 45%, 88%),
+  200: hsl(203, 45%, 78%),
+  300: hsl(203, 45%, 68%),
+  400: hsl(203, 45%, 58%),
+  500: hsl(203, 45%, 48%),
+  600: hsl(203, 45%, 38%),
+  700: hsl(203, 45%, 28%),
+  800: hsl(203, 45%, 18%),
+  900: hsl(203, 45%, 10%),
+  default: hsl(203, 45%, 28%),
+  lighter: hsl(203, 45%, 48%),
+  darker: hsl(203, 45%, 18%),
+
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $dark-text,
+    400: $dark-text,
+    500: $light-text,
+    600: $light-text,
+    700: $light-text,
+    800: $light-text,
+    900: $light-text,
+    default: $light-text,
+    lighter: $dark-text,
+    darker: $light-text
+  )
+);
+
+
+
+$grey: (
+  50: #fafafa,
+  100: #f5f5f5,
+  200: #eeeeee,
+  300: #e0e0e0,
+  400: #bdbdbd,
+  500: #9e9e9e,
+  600: #757575,
+  700: #616161,
+  800: #424242,
+  900: #212121,
+
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $dark-text,
+    400: $dark-text,
+    500: $dark-text,
+    600: $light-text,
+    700: $light-text,
+    800: $light-text,
+    900: $light-text
+  )
+);
+
+
+$mat-light-theme-background: (
+  background:               $light-background,
+  status-bar:               $light-background,
+  app-bar:                  $light-background,
+  hover:                    $dark-bg,
+  card:                     $light-background,
+  dialog:                   $light-background,
+  tooltip:                  $dark-bg,
+  disabled-button:          $dark-bg,
+  raised-button:            $light-bg-lighter-5,
+  focused-button:           $dark-bg,
+  selected-button:          $light-bg-darker-20,
+  selected-disabled-button: $light-bg-darker-30,
+  disabled-button-toggle:   $light-bg-darker-10,
+  unselected-chip:          $light-bg-darker-10,
+  disabled-list-option:     $light-bg-darker-10,
+);
+
+
+
+// Theme color for icons and texts
+$mat-light-theme-foreground: (
+  base:              $dark,
+  divider:           $dark,
+  dividers:          $dark,
+  disabled:          $dark,
+  disabled-button:   $dark,
+  disabled-text:     $dark,
+  elevation:         $dark,
+  hint-text:         $dark,
+  secondary-text:    $dark,
+  icon:              rgba(black, 0.54),
+  icons:             rgba(black, 0.54),
+  text:              rgba(black, 0.87),
+  slider-min:        rgba(black, 0.87),
+  slider-off:        rgba(black, 0.26),
+  slider-off-active: rgba(black, 0.38),
+);
